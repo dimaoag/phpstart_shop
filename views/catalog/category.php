@@ -35,7 +35,7 @@
                                             <h2><?= $categoryProduct['price']; ?>$</h2>
                                             <p>
                                                 <a href="/product/<?= $categoryProduct['id']; ?>">
-                                                    <?= $categoryProduct['name']; ?>
+                                                    ID: <?= $categoryProduct['id']; ?>, <?= $categoryProduct['name']; ?>
                                                 </a>
                                             </p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
