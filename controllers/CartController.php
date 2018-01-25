@@ -98,7 +98,7 @@ class CartController
 //                    $message = "<p>Link</p>";
 //                    $subject = 'Новый заказ';
 //
-//                    $headers = "From: The Sender Name <mysite.loc>\r\n";
+//                    $headers = "From: The Sender Name <my@site.loc>\r\n";
 //                    $headers .= "Reply-To: mysite.loc\r\n";
 //                    $headers .= "Content-type: text/html\r\n";
 //                    $result = mail($adminEmail, $subject, $message, $headers);
