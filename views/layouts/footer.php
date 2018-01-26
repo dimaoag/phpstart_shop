@@ -14,6 +14,7 @@
 
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="/template/js/jquery.js"></script>
 <script src="/template/js/bootstrap.min.js"></script>
 <script src="/template/js/jquery.scrollUp.min.js"></script>
