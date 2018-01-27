@@ -247,7 +247,7 @@ class Product{
         $result = $db->prepare($sql);
         $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
         $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
-        $result->bindParam(':code', $options['code'], PDO::PARAM_STR);
+        $result->bindParam(':code', $options['code'], PDO::PARAM_INT);
         $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
         $result->bindParam(':availability', $options['availability'], PDO::PARAM_INT);
         $result->bindParam(':brand', $options['brand'], PDO::PARAM_STR);
@@ -262,9 +262,79 @@ class Product{
     }
 
 
+    /**
+     * Возвращает список товаров с указанными индентификторами
+     * @param array $idsArray <p>Массив с идентификаторами</p>
+     * @return array <p>Массив со списком товаров</p>
+     */
+    public static function getProdustsByIds($idsArray)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Превращаем массив в строку для формирования условия в запросе
+        $idsString = implode(',', $idsArray);
+
+        // Текст запроса к БД
+        $sql = "SELECT * FROM product WHERE status='1' AND id IN ($idsString)";
+
+        $result = $db->query($sql);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Получение и возврат результатов
+        $i = 0;
+        $products = array();
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['code'] = $row['code'];
+            $products[$i]['name'] = $row['name'];
+            $products[$i]['price'] = $row['price'];
+            $i++;
+        }
+        return $products;
+    }
+
+    public static function setImageById($id, $image){
+
+        $db = Db::getConnection();
+
+
+        $sql = 'UPDATE product SET
+                  image = :image
+                  WHERE id = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':image', $image, PDO::PARAM_STR);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        return $result->execute();
+    }
 
 
 
+    public static function deleteImageById($id){
 
+        unlink($_SERVER['DOCUMENT_ROOT'] . "//upload/images/products/{$id}.jpg");
+    }
+
+
+
+    public static function getImageById($id){
+
+        $id = intval($id);
+
+        if ($id){
+
+            $db = Db::getConnection();
+
+            $result = $db->query('SELECT image FROM product WHERE id = ' . $id);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+
+            return $result->fetch();
+        }
+
+    }
 
 }

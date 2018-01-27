@@ -35,7 +35,7 @@
                             <input type="text" name="name" placeholder="" value="">
 
                             <p>Артикул</p>
-                            <input type="text" name="code" placeholder="" value="">
+                            <input type="number" name="code" placeholder="" value="">
 
                             <p>Стоимость, $</p>
                             <input type="text" name="price" placeholder="" value="">

@@ -49,6 +49,16 @@ class AdminProductController extends AdminBase{
 
                 if ($idNewProduct){
 
+                    if (is_uploaded_file($_FILES['image']['tmp_name'])){
+                        $image = "/upload/images/products/{$idNewProduct}.jpg";
+                        $fullPathImage = $_SERVER['DOCUMENT_ROOT'] . $image;
+                        move_uploaded_file($_FILES['image']['tmp_name'], $fullPathImage);
+                        Product::setImageById($idNewProduct, $image);
+
+                    } else {
+                        $image = "/upload/images/products/no-image.jpg";
+                        Product::setImageById($idNewProduct, $image);
+                    }
 
                 }
 
@@ -92,11 +102,37 @@ class AdminProductController extends AdminBase{
 
             if ($errors == false){
 
-                $idNewProduct = Product::updateProduct($id ,$options);
+                $idUpdateProduct = Product::updateProduct($id ,$options);
 
-                if ($idNewProduct){
+                if ($idUpdateProduct){
+
+                    if (is_uploaded_file($_FILES['image']['tmp_name'])){
+
+                        $noneImage = "/upload/images/products/no-image.jpg";
+                        $oldImage = Product::getImageById($id);
+
+                        if (!$oldImage['image'] == $noneImage){
+                            Product::deleteImageById($id);
+
+                            $image = "/upload/images/products/{$id}.jpg";
+                            $fullPathImage = $_SERVER['DOCUMENT_ROOT'] . $image;
+                            move_uploaded_file($_FILES['image']['tmp_name'], $fullPathImage);
+                            Product::setImageById($id, $image);
+
+                        } else {
+
+                            Product::deleteImageById($id);
+                            $image = "/upload/images/products/{$id}.jpg";
+                            $fullPathImage = $_SERVER['DOCUMENT_ROOT'] . $image;
+                            move_uploaded_file($_FILES['image']['tmp_name'], $fullPathImage);
+                            Product::setImageById($id, $image);
+                        }
 
 
+                    } else {
+                        $image = "/upload/images/products/no-image.jpg";
+                        Product::setImageById($idUpdateProduct, $image);
+                    }
                 }
 
                 header("Location: /admin/product");
@@ -116,6 +152,7 @@ class AdminProductController extends AdminBase{
 
         if (isset($_POST['submit'])){
             $result = Product::deleteProductById($id);
+            Product::deleteImageById($id);
             if ($result){
                 header("Location: /admin/product");
             }
