@@ -17,9 +17,9 @@
                     <div class="signup-form"><!--sign up form-->
                         <h2>Регистрация на сайте</h2>
                         <form action="#" method="post">
-                            <input type="text"  name="name" value="<?php echo $name; ?>" placeholder="Имя"/>
-                            <input type="email" name="email" value="<?php echo $email; ?>" placeholder="E-mail"/>
-                            <input type="password" name="password" value="<?php echo $password; ?>" placeholder="Пароль"/>
+                            <input type="text"  name="name" value="" placeholder="Имя"/>
+                            <input type="email" name="email" value="" placeholder="E-mail"/>
+                            <input type="password" name="password" value="" placeholder="Пароль"/>
                             <input type="submit" name="submit" class="btn btn-info" value="Регистрация"/>
                         </form>
                     </div><!--/sign up form-->

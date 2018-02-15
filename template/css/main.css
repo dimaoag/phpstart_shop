@@ -8,9 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
+  /*font-weight:400px;*/
 }
 
 ul li {
@@ -91,7 +90,7 @@ a#scrollUp i{
   border: 0 none;
   border-radius: 0;
   color: #696763;
-  padding:0px;
+  padding: 0px;
 }
 
 
@@ -898,13 +897,11 @@ h2.title {
 .product-overlay {
   background:#FE980F;
   top: 0;
-  display: none;
   height: 0;
   position: absolute;
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -916,7 +913,6 @@ h2.title {
 .product-overlay .overlay-content {
   bottom: 0;
   position: absolute;
-  bottom: 0;
   text-align: center;
   width: 100%;
 }
@@ -2146,7 +2142,7 @@ h2.title {
 
 .rating-area {
   border: 1px solid #F7F7F0;
-  direction: block;
+  /*direction: block;*/
   overflow: hidden;
 }
 
@@ -2175,7 +2171,7 @@ h2.title {
   text-transform: uppercase;
 }
 
-.rating-area 
+.rating-area,
 .ratings .color, 
 .rating-area .color {
   color: #FE980F
@@ -2202,7 +2198,7 @@ h2.title {
 }
 
 
-.commnets 
+.commnets,
 .media-object {
   margin-right: 15px;
   width: 100%;
@@ -2211,17 +2207,17 @@ h2.title {
 .commnets {
   border: 1px solid #F7F7F0;
   padding: 18px 18px 18px 0;
-  margin-bottom: 50px
+  margin-bottom: 50px;
 }
 
 .commnets .pull-left {
-  margin-right: 22px
+  margin-right: 22px;
 }
 
 .commnets p, 
 .response-area p, 
 .replay-box p {
-  font-size: 12px
+  font-size: 12px;
 }
 
 .media-heading {
@@ -2229,7 +2225,7 @@ h2.title {
   font-size: 14px;
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
-  margin-bottom: 15px
+  margin-bottom: 15px;
 }
 
 .blog-socials {
@@ -2267,7 +2263,7 @@ h2.title {
 
 .blog-socials ul li a:hover {
   color: #fff;
-  background:#FE980F
+  background:#FE980F;
 }
 
 
@@ -2292,7 +2288,7 @@ h2.title {
 .response-area .media {
   border: 1px solid #F7F7F0;
   padding: 18px 18px 18px 0;
-  margin-bottom: 27px
+  margin-bottom: 27px;
 }
 
 .response-area .media img{
