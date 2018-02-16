@@ -21,7 +21,7 @@
                             <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Имя"/>
                             <p>Пароль:</p>
                             <input type="password" name="password" value="<?php echo $password; ?>" placeholder="Пароль"/>
-                            <input type="submit" name="submit" class="btn btn-info" value="Сохранить"/>
+                            <input type="submit" name="submit" class="btn btn-warning" value="Сохранить"/>
                         </form>
                     </div><!--/sign up form-->
                 <?php endif; ?>

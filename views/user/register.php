@@ -20,7 +20,7 @@
                             <input type="text"  name="name" value="" placeholder="Имя"/>
                             <input type="email" name="email" value="" placeholder="E-mail"/>
                             <input type="password" name="password" value="" placeholder="Пароль"/>
-                            <input type="submit" name="submit" class="btn btn-info" value="Регистрация"/>
+                            <input type="submit" name="submit" class="btn btn-warning" value="Регистрация"/>
                         </form>
                     </div><!--/sign up form-->
                 <?php endif;?>

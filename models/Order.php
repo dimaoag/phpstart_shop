@@ -71,6 +71,25 @@ class Order
 
     }
 
+    public static function getLastItem(){
+
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT * FROM product_order ORDER BY id DESC LIMIT 1';
+
+        $result = $db->prepare($sql);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполняем запрос
+        $result->execute();
+
+        // Возвращаем данные
+        return $result->fetch();
+    }
+
 
 
     public static function updateOrderById($id, $userName, $userPhone, $userComment, $date, $status)

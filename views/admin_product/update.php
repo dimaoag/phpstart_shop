@@ -98,7 +98,7 @@
 
                         <br/><br/>
 
-                        <input type="submit" name="submit" class="btn btn-info" value="Сохранить">
+                        <input type="submit" name="submit" class="btn btn-warning" value="Сохранить">
 
                         <br/><br/>
 

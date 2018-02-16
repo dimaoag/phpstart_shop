@@ -131,6 +131,25 @@ class User{
         header("Location: /user/login");
     }
 
+    public static function getLastUser(){
+
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT * FROM user ORDER BY id DESC LIMIT 1';
+
+        $result = $db->prepare($sql);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполняем запрос
+        $result->execute();
+
+        // Возвращаем данные
+        return $result->fetch();
+    }
+
 
     public static function isGuest(){
 

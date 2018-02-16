@@ -37,7 +37,7 @@
 
                         <br><br>
 
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                        <input type="submit" name="submit" class="btn btn-warning" value="Сохранить">
                     </form>
                 </div>
             </div>

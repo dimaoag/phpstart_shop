@@ -1,7 +1,5 @@
 <?php
 
-//include_once ROOT . '/models/Category.php';
-//include_once ROOT . '/models/Product.php';
 
 class SiteController{
 
@@ -42,14 +40,14 @@ class SiteController{
 
 
             if ($errors == false){
-                $adminEmail = 'dimaoag@gmail.com';
-                $message = "<p>$userText</p><br>From: <p>$userEmail</p>";
-                $subject = 'Тема письма';
-
-                $headers = "From: The Sender Name <mysite.loc>\r\n";
-                $headers .= "Reply-To: $userEmail\r\n";
-                $headers .= "Content-type: text/html\r\n";
-                $result = mail($adminEmail, $subject, $message, $headers);
+//                $adminEmail = 'dimaoag@gmail.com';
+//                $message = "<p>$userText</p><br>From: <p>$userEmail</p>";
+//                $subject = 'Тема письма';
+//
+//                $headers = "From:  <vpsground.site>\r\n";
+//                $headers .= "Reply-To: $userEmail\r\n";
+//                $headers .= "Content-type: text/html\r\n";
+//                $result = mail($adminEmail, $subject, $message, $headers);
             }
         }
 

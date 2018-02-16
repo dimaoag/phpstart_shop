@@ -60,7 +60,7 @@
 
                                         <br/>
                                         <br/>
-                                        <input type="submit" name="submit" class="btn btn-info" value="Оформить" />
+                                        <input type="submit" name="submit" class="btn btn-warning" value="Оформить" />
                                     </form>
                                 </div>
                             </div>

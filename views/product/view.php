@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="/template/images/product-details/1.jpg" alt="" />
+                                <img src="<?= $product['image'] ?>" alt="" />
                             </div>
                         </div>
                         <div class="col-sm-7">
@@ -36,17 +36,21 @@
                                 <h2><?= $product['name'] ?></h2>
                                 <p>Код товара: <?= $product['code'] ?></p>
                                 <span>
-                                            <span>US $<?= $product['price'] ?></span>
-                                            <label>Количество:</label>
-                                            <input type="text" value="3" />
-                                            <button type="button" class="btn btn-fefault cart">
+                                    <span>US $<?= $product['price'] ?></span>
+                                    <a href="/cart/add/<?= $product['id'] ?>">
+                                        <button type="button" class="btn btn-fefault cart">
                                                 <i class="fa fa-shopping-cart"></i>
-                                                В корзину
-                                            </button>
-                                        </span>
-                                <p><b>Наличие:</b> На складе</p>
+                                            В корзину
+                                        </button>
+                                    </a>
+                                </span>
+                                <p>Наличие:<b>
+                                    <?php if ($product['status'] == 1):?>
+                                        </b> На складе</b></p>
+                                    <?php else:?>
+                                        </b>Нет на складе</b></p>
+                                    <?php endif;?>
                                 <p><b>Состояние:</b> Новое</p>
-                                <p><b>Производитель:</b> D&amp;G</p>
                             </div><!--/product-information-->
                         </div>
                     </div>

@@ -13,7 +13,7 @@
                     </ol>
                 </div>
 
-                <a href="/admin/category/create" class="btn btn-default back"><i class="fa fa-plus"></i> Добавить категорию</a>
+                <a href="/admin/category/create" class="btn btn-success back"><i class="fa fa-plus"></i> Добавить категорию</a>
 
                 <h4>Список категорий</h4>
 

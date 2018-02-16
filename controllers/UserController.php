@@ -36,6 +36,12 @@ class UserController{
 
             if ($errors == false){
                 $result = User::register($name, $email, $password);
+                $lastUser = User::getLastUser();
+                if ($result){
+                    User::auth($lastUser['id']);
+                    header("Location: /cabinet/");
+                }
+
             }
 
 

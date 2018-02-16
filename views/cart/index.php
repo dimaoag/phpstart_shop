@@ -60,11 +60,11 @@
 
                             </table>
 
-                            <a class="btn btn-default checkout" href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
+                            <a class="btn btn-warning checkout" href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
                         <?php else: ?>
                             <p>Корзина пуста</p>
 
-                            <a class="btn btn-default checkout" href="/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
+                            <a class="btn btn-warning checkout" href="/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
                         <?php endif; ?>
 
                     </div>

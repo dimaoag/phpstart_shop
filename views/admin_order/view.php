@@ -76,7 +76,7 @@
                 <?php endforeach; ?>
             </table>
 
-            <a href="/admin/order/" class="btn btn-default back"><i class="fa fa-arrow-left"></i> Назад</a>
+            <a href="/admin/order/" class="btn btn-warning back"><i class="fa fa-arrow-left"></i> Назад</a>
         </div>
 
 

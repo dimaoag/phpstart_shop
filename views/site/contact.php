@@ -22,7 +22,7 @@
                             <input type="email" name="userEmail" value="<?php echo $userEmail; ?>" placeholder="E-mail"/>
                             <p>Сообщение:</p>
                             <input type="text" name="userText" value="<?php echo $userText; ?>" placeholder="Сообщение"/>
-                            <input type="submit" name="submit" class="btn btn-info" value="Отправить"/>
+                            <input type="submit" name="submit" class="btn btn-warning" value="Отправить"/>
                         </form>
                     </div><!--/sign up form-->
                 <?php endif; ?>

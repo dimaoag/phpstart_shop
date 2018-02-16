@@ -16,7 +16,7 @@
                     <form action="#" method="post">
                         <input type="email" name="email" value="<?php echo $email; ?>" placeholder="E-mail"/>
                         <input type="password" name="password" value="<?php echo $password; ?>" placeholder="Пароль"/>
-                        <input type="submit" name="submit" class="btn btn-info" value="Вход"/>
+                        <input type="submit" name="submit" class="btn btn-warning" value="Вход"/>
                     </form>
                 </div><!--/sign up form-->
             </div>
