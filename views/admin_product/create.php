@@ -88,6 +88,14 @@
 
                             <br/><br/>
 
+                            <p>Активные в слайдере</p>
+                            <select name="is_active">
+                                <option value="1">Да</option>
+                                <option value="0" selected="selected">Нет</option>
+                            </select>
+
+                            <br/><br/>
+
                             <p>Статус</p>
                             <select name="status">
                                 <option value="1" selected="selected">Отображается</option>
@@ -96,7 +104,7 @@
 
                             <br/><br/>
 
-                            <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                            <input type="submit" name="submit" class="btn btn-info" value="Сохранить">
 
                             <br/><br/>
 

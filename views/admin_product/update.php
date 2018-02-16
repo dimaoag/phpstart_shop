@@ -82,6 +82,14 @@
 
                         <br/><br/>
 
+                        <p>Активные на сайте</p>
+                        <select name="is_active">
+                            <option value="1" <?php if ($product['is_active'] == 1) echo ' selected="selected"'; ?>>Да</option>
+                            <option value="0" <?php if ($product['is_active'] == 0) echo ' selected="selected"'; ?>>Нет</option>
+                        </select>
+
+                        <br/><br/>
+
                         <p>Статус</p>
                         <select name="status">
                             <option value="1" <?php if ($product['status'] == 1) echo ' selected="selected"'; ?>>Отображается</option>
@@ -90,7 +98,7 @@
 
                         <br/><br/>
 
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                        <input type="submit" name="submit" class="btn btn-info" value="Сохранить">
 
                         <br/><br/>
 

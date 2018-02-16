@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-9 padding-right">
+                <div class="col-sm-9 padding-left">
                     <div class="features_items">
                         <h2 class="title text-center">Корзина</h2>
 
@@ -60,7 +60,7 @@
 
                                         <br/>
                                         <br/>
-                                        <input type="submit" name="submit" class="btn btn-default" value="Оформить" />
+                                        <input type="submit" name="submit" class="btn btn-info" value="Оформить" />
                                     </form>
                                 </div>
                             </div>

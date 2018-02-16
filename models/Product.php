@@ -21,7 +21,7 @@ class Product{
 
         $count = intval($count);
         $page = intval($page);
-        $offset = $page * $count;
+        $offset = ($page - 1) * $count;
 
         $db = Db::getConnection();
 
@@ -110,6 +110,9 @@ class Product{
         return $row['count'];
     }
 
+    
+    
+
 
     public static function getProductsByIds($idsArray)
     {
@@ -144,7 +147,7 @@ class Product{
         // Получение и возврат результатов
         $result = $db->query('SELECT id, name, price, is_new FROM product '
             . ' WHERE status = "1" AND is_recommended = "1" '
-            . ' ORDER BY id DESC');
+            . ' ORDER BY id DESC LIMIT 3;');
         $i = 0;
         $productsList = array();
 
@@ -158,13 +161,39 @@ class Product{
         return $productsList;
     }
 
+    public static function getActiveProducts()
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Получение и возврат результатов
+        $result = $db->query('SELECT id, name, price, is_new, image FROM product '
+            . ' WHERE status = "1" AND is_active = "1" '
+            . ' ORDER BY id DESC LIMIT 3;');
+        $i = 0;
+        $productsList = array();
+
+        while ($row = $result->fetch()) {
+            $productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['name'] = $row['name'];
+            $productsList[$i]['price'] = $row['price'];
+            $productsList[$i]['is_new'] = $row['is_new'];
+            $productsList[$i]['image'] = $row['image'];
+            $i++;
+        }
+        return $productsList;
+    }
+
+
+
+
 
     public static function getProductsList(){
 
         $db = Db::getConnection();
 
         // Получение и возврат результатов
-        $result = $db->query('SELECT id, name, price, code FROM product '
+        $result = $db->query('SELECT id, name, price, is_active,code FROM product '
             . ' ORDER BY id ASC');
 
         $i = 0;
@@ -175,6 +204,7 @@ class Product{
             $productsList[$i]['name'] = $row['name'];
             $productsList[$i]['price'] = $row['price'];
             $productsList[$i]['code'] = $row['code'];
+            $productsList[$i]['is_active'] = $row['is_active'];
             $i++;
         }
         return $productsList;
@@ -200,10 +230,10 @@ class Product{
         $db = Db::getConnection();
 
         $sql = 'INSERT INTO product '
-            . '(name, category_id, code, price, availability, brand, description, is_new, is_recommended, status) '
+            . '(name, category_id, code, price, availability, brand, description, is_new, is_recommended, is_active, status) '
             . 'VALUES '
             . '(:name, :category_id, :code, :price, :availability, :brand, :description, :is_new, '
-            . ':is_recommended, :status)';
+            . ':is_recommended, :is_active, :status)';
 
         $result = $db->prepare($sql);
         $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
@@ -215,6 +245,7 @@ class Product{
         $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
         $result->bindParam(':is_new', $options['is_new'], PDO::PARAM_INT);
         $result->bindParam(':is_recommended', $options['is_recommended'], PDO::PARAM_INT);
+        $result->bindParam(':is_active', $options['is_active'], PDO::PARAM_INT);
         $result->bindParam(':status', $options['status'], PDO::PARAM_INT);
 
         if ($result->execute()){
@@ -241,6 +272,7 @@ class Product{
                   description = :description,
                   is_new = :is_new,
                   is_recommended = :is_recommended,
+                  is_active = :is_active,
                   status = :status
                   WHERE id = :id';
 
@@ -254,6 +286,7 @@ class Product{
         $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
         $result->bindParam(':is_new', $options['is_new'], PDO::PARAM_INT);
         $result->bindParam(':is_recommended', $options['is_recommended'], PDO::PARAM_INT);
+        $result->bindParam(':is_active', $options['is_active'], PDO::PARAM_INT);
         $result->bindParam(':status', $options['status'], PDO::PARAM_INT);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
 

@@ -31,7 +31,9 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="<?= $product['image']; ?>" alt="image" />
+                                            <a href="/product/<?= $product['id']; ?>">
+                                                <img src="<?= $product['image']; ?>" alt="image" />
+                                            </a>
                                             <h2><?= $product['price']; ?>$</h2>
                                             <p>
                                                 <a href="/product/<?= $product['id']; ?>">

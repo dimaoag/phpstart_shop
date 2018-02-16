@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-sm-7">
                             <div class="product-information"><!--/product-information-->
-                                <img src="/template/images/product-details/new.jpg" class="newarrival" alt="" />
+                                    <img src="/template/images/product-details/new.jpg" class="newarrival" alt="" />
                                 <h2><?= $product['name'] ?></h2>
                                 <p>Код товара: <?= $product['code'] ?></p>
                                 <span>

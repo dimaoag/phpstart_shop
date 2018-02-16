@@ -15,7 +15,9 @@ class SiteController{
         $latestProducts = array();
         $latestProducts = Product::getLatestProducts(6);
 
+
         $sliderProducts = Product::getRecommendedProducts();
+        $activeProducts = Product::getActiveProducts();
 
 
         require_once (ROOT . '/views/site/index.php');

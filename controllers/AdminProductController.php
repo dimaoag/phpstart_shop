@@ -34,6 +34,7 @@ class AdminProductController extends AdminBase{
             $options['description'] = $_POST['description'];
             $options['is_new'] = $_POST['is_new'];
             $options['is_recommended'] = $_POST['is_recommended'];
+            $options['is_active'] = $_POST['is_active'];
             $options['status'] = $_POST['status'];
 
 
@@ -92,6 +93,7 @@ class AdminProductController extends AdminBase{
             $options['description'] = $_POST['description'];
             $options['is_new'] = $_POST['is_new'];
             $options['is_recommended'] = $_POST['is_recommended'];
+            $options['is_active'] = $_POST['is_active'];
             $options['status'] = $_POST['status'];
 
             $errors = false;

@@ -7,10 +7,10 @@
                 <br/>
 
                 <div class="breadcrumbs">
-                    <ol class="breadcrumb">
-                        <li><a href="/admin/">Админпанель</a></li>
+                    <ul class="breadcrumb">
+                        <li><a href="/admin/">Админ панель</a></li>
                         <li class="active">Управление товарами</li>
-                    </ol>
+                    </ul>
                 </div>
 
                 <a href="/admin/product/create" class="btn btn-default back"><i class="fa fa-plus"></i> Добавить товар</a>
@@ -25,6 +25,7 @@
                         <th>Артикул</th>
                         <th>Название товара</th>
                         <th>Цена</th>
+                        <th>Активный в слайдере</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -34,6 +35,7 @@
                             <td><?php echo $product['code']; ?></td>
                             <td><?php echo $product['name']; ?></td>
                             <td><?php echo $product['price']; ?></td>
+                            <td><?php echo $product['is_active']; ?></td>
                             <td><a href="/admin/product/update/<?php echo $product['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a></td>
                             <td><a href="/admin/product/delete/<?php echo $product['id']; ?>" title="Удалить"><i class="fa fa-times"></i></a></td>
                         </tr>
