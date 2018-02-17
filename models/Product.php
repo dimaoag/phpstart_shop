@@ -349,7 +349,9 @@ class Product{
 
     public static function deleteImageById($id){
 
-        unlink($_SERVER['DOCUMENT_ROOT'] . "//upload/images/products/{$id}.jpg");
+        unlink($_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+
+        unlink($_SERVER['DOCUMENT_ROOT'] . "/upload/images/products_resize/{$id}.jpg");
     }
 
 

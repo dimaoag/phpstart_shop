@@ -54,11 +54,18 @@ class AdminProductController extends AdminBase{
                         $image = "/upload/images/products/{$idNewProduct}.jpg";
                         $fullPathImage = $_SERVER['DOCUMENT_ROOT'] . $image;
                         move_uploaded_file($_FILES['image']['tmp_name'], $fullPathImage);
-                        Product::setImageById($idNewProduct, $image);
+
+                        $imageResize = new ResizeClass($fullPathImage);
+                        $imageResize->resize(472, 600, 'crop');
+                        $pathImageResize = "/upload/images/products_resize/{$idNewProduct}.jpg";
+                        $pathFullImageResize = $_SERVER['DOCUMENT_ROOT'] . $pathImageResize;
+                        $imageResize->save($pathFullImageResize, 100);
+
+                        Product::setImageById($idNewProduct, $pathImageResize);
 
                     } else {
-                        $image = "/upload/images/products/no-image.jpg";
-                        Product::setImageById($idNewProduct, $image);
+                        $pathImageResize = "/upload/images/products_resize/no-image.jpg";
+                        Product::setImageById($idNewProduct, $pathImageResize);
                     }
 
                 }
@@ -110,7 +117,7 @@ class AdminProductController extends AdminBase{
 
                     if (is_uploaded_file($_FILES['image']['tmp_name'])){
 
-                        $noneImage = "/upload/images/products/no-image.jpg";
+                        $noneImage = "/upload/images/products_resize/no-image.jpg";
                         $oldImage = Product::getImageById($id);
 
                         if (!$oldImage['image'] == $noneImage){
@@ -119,20 +126,34 @@ class AdminProductController extends AdminBase{
                             $image = "/upload/images/products/{$id}.jpg";
                             $fullPathImage = $_SERVER['DOCUMENT_ROOT'] . $image;
                             move_uploaded_file($_FILES['image']['tmp_name'], $fullPathImage);
-                            Product::setImageById($id, $image);
+
+                            $imageResize = new ResizeClass($fullPathImage);
+                            $imageResize->resize(472, 600, 'crop');
+                            $pathImageResize = "/upload/images/products_resize/{$id}.jpg";
+                            $pathFullImageResize = $_SERVER['DOCUMENT_ROOT'] . $pathImageResize;
+                            $imageResize->save($pathFullImageResize, 100);
+
+                            Product::setImageById($id, $pathImageResize);
 
                         } else {
 
-                            Product::deleteImageById($id);
+
                             $image = "/upload/images/products/{$id}.jpg";
                             $fullPathImage = $_SERVER['DOCUMENT_ROOT'] . $image;
                             move_uploaded_file($_FILES['image']['tmp_name'], $fullPathImage);
-                            Product::setImageById($id, $image);
+
+                            $imageResize = new ResizeClass($fullPathImage);
+                            $imageResize->resize(472, 600, 'crop');
+                            $pathImageResize = "/upload/images/products_resize/{$id}.jpg";
+                            $pathFullImageResize = $_SERVER['DOCUMENT_ROOT'] . $pathImageResize;
+                            $imageResize->save($pathFullImageResize, 100);
+
+                            Product::setImageById($id, $pathImageResize);
                         }
 
 
                     } else {
-                        $image = "/upload/images/products/no-image.jpg";
+                        $image = "/upload/images/products_resize/no-image.jpg";
                         Product::setImageById($idUpdateProduct, $image);
                     }
                 }
