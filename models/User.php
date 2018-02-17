@@ -95,6 +95,27 @@ class User{
     }
 
 
+    public static function getPasswordByEmail($email){
+
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT * FROM `user` WHERE email = :email';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->execute();
+
+        $user = $result->fetch();
+
+        if ($user){
+            return $user['password'];
+        }
+        return false;
+
+    }
+
+
     public static function checkUserData($email, $password){
 
         $db = Db::getConnection();

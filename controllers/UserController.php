@@ -93,6 +93,47 @@ class UserController{
     }
 
 
+    public function actionRemind(){
+
+        if (isset($_POST['submit'])) {
+            $email = $_POST['email'];
+
+            $errors = false;
+
+            if (!User::checkEmail($email)) {
+                $errors[] = 'Неправильный email';
+            }
+
+            if (!User::checkEmailExist($email)) {
+                $errors[] = 'Неправильный email';
+            } else {
+
+                $password= User::getPasswordByEmail($email);
+
+
+//                $adminEmail = 'dimaoag@gmail.com';
+//                $message = "<h3>Пароль от vpsground.site: </h3><p>$password</p>";
+//                $subject = 'Ввостановление пароля';
+//
+//                $headers = "From:  <vpsground.site>\r\n";
+//                $headers .= "Reply-To: $adminEmail\r\n";
+//                $headers .= "Content-type: text/html\r\n";
+//                $result = mail($email, $subject, $message, $headers);
+
+                $result = 1;
+
+                if ($result){
+                    header("Location: /user/login");
+                }
+            }
+        }
+
+        require_once ROOT . '/views/user/remindPassword.php';
+
+        return true;
+    }
+
+
     public function actionLogout(){
         session_start();
         unset($_SESSION['user']);

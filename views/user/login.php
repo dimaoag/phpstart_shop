@@ -16,6 +16,7 @@
                     <form action="#" method="post">
                         <input type="email" name="email" value="<?php echo $email; ?>" placeholder="E-mail"/>
                         <input type="password" name="password" value="<?php echo $password; ?>" placeholder="Пароль"/>
+                        <a href="/user/remind">Забыл пароль?</a><br><br>
                         <input type="submit" name="submit" class="btn btn-warning" value="Вход"/>
                     </form>
                 </div><!--/sign up form-->

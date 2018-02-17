@@ -24,6 +24,7 @@ return array(
 
     'user/register' => 'user/register',
     'user/login' => 'user/login',
+    'user/remind' => 'user/remind',
     'user/logout' => 'user/logout',
 
     'cabinet/edit' => 'cabinet/edit',
