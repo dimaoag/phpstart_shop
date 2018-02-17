@@ -26,51 +26,24 @@
             <div class="col-sm-9 padding-right">
 
                 <div class="recommended_items"><!--recommended_items-->
-                    <h2 class="title text-center">Рекомендуемые товары</h2>
 
                     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <?php foreach ($activeProducts as $item): ?>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="/template/images/home/recommend1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition </p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-                                                </div>
 
-                                            </div>
-                                        </div>
+                            <div id="wrapper">
+                                <div class="slider-wrapper theme-default">
+                                    <div id="slider" class="nivoSlider">
+                                        <img src="/upload/images/slider/113.png" data-thumb="/upload/images/slider/113.png" alt="" data-transition="slideInLeft" />
+                                        <img src="/upload/images/slider/114.jpg" data-thumb="/upload/images/slider/114.jpg" alt="" />
                                     </div>
-                                <?php endforeach; ?>
-                            </div>
-                            <div class="item">
-                                <?php foreach ($sliderProducts as $item): ?>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="/template/images/home/recommend1.jpg" alt="" />
-                                                    <h2>$60</h2>
-                                                    <p>Easy Polo Black Edition </p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div id="htmlcaption" class="nivo-html-caption">
+                                        <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
                                     </div>
-                                <?php endforeach; ?>
+                                </div>
                             </div>
 
                         </div>
-                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
+
                     </div>
                 </div><!--/recommended_items-->
 

@@ -14,6 +14,15 @@
     <link href="/template/css/animate.css" rel="stylesheet">
     <link href="/template/css/main.css" rel="stylesheet">
     <link href="/template/css/responsive.css" rel="stylesheet">
+
+
+
+    <link href="/template/css/slider/nivo-slider.css" rel="stylesheet">
+    <link href="/template/css/slider/themes/default/default.css" rel="stylesheet">
+
+
+
+
     <!--[if lt IE 9]>
     <script src="/template/js/html5shiv.js"></script>
     <script src="/template/js/respond.min.js"></script>
