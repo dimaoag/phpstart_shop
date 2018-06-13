@@ -95,7 +95,7 @@ sudo echo 'server {
                    rewrite ^/* /phpmyadmin last;
         }
 
-}' > /etc/nginx/sites-available/default
+}' > /etc/nginx/sites-available/phpstart.loc
 
 echo 'zend_extension=xdebug.so
 xdebug.remote_autostart=on

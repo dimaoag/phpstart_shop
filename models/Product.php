@@ -9,7 +9,7 @@ class Product{
      *
      */
 
-    const SHOW_BY_DEFAULT = 6;
+    const SHOW_BY_DEFAULT = 3;
 
 
     /*

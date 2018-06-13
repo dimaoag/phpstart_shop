@@ -111,14 +111,14 @@ class UserController{
                 $password= User::getPasswordByEmail($email);
 
 
-//                $adminEmail = 'dimaoag@gmail.com';
-//                $message = "<h3>Пароль от vpsground.site: </h3><p>$password</p>";
-//                $subject = 'Ввостановление пароля';
-//
-//                $headers = "From:  <vpsground.site>\r\n";
-//                $headers .= "Reply-To: $adminEmail\r\n";
-//                $headers .= "Content-type: text/html\r\n";
-//                $result = mail($email, $subject, $message, $headers);
+                $adminEmail = 'dimaoag@gmail.com';
+                $message = "<h3>Пароль от test124.site: </h3><p>$password</p>";
+                $subject = 'Ввостановление пароля';
+
+                $headers = "From:  <test124.site>\r\n";
+                $headers .= "Reply-To: $adminEmail\r\n";
+                $headers .= "Content-type: text/html\r\n";
+                $result = mail($email, $subject, $message, $headers);
 
                 $result = 1;
 

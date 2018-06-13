@@ -1,16 +1,16 @@
 <?php
 
-//return array(
-//    'host' => 'vpsgroun.mysql.tools',
-//    'dbname' => 'vpsgroun_dbser',
-//    'user' => 'vpsgroun_dbser',
-//    'password' => '123456',
-//);
-
-
 return array(
-  'host' => 'phpstart.loc',
-  'dbname' => 'db_1',
-  'user' => 'root',
-  'password' => '1111',
+    'host' => 'test1224.mysql.tools',
+    'dbname' => 'test1224_db',
+    'user' => 'test1224_db',
+    'password' => 'ka5AbkQd',
 );
+
+
+//return array(
+//  'host' => 'phpstart.loc',
+//  'dbname' => 'phpstart',
+//  'user' => 'root',
+//  'password' => '1111',
+//);

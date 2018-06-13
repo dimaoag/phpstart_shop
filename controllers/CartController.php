@@ -98,14 +98,14 @@ class CartController
                 $lastOrder = Order::getLastItem();
 
                 if ($result){
-//                    $adminEmail = 'dimaoag@gmail.com';
-//                    $message = "<p>Link</p>";
-//                    $subject = "Новый заказ: #ID {$lastOrder['id']}";
-//
-//                    $headers = "From: The Sender Name <vpsground.site>\r\n";
-//                    $headers .= "Reply-To: mysite.loc\r\n";
-//                    $headers .= "Content-type: text/html\r\n";
-//                    $result = mail($adminEmail, $subject, $message, $headers);
+                    $adminEmail = 'dimaoag@gmail.com';
+                    $message = "<p>Link</p>";
+                    $subject = "Новый заказ: #ID {$lastOrder['id']}";
+
+                    $headers = "From: The Sender Name <test124.site>\r\n";
+                    $headers .= "Reply-To: mysite.loc\r\n";
+                    $headers .= "Content-type: text/html\r\n";
+                    $result = mail($adminEmail, $subject, $message, $headers);
 
 
 
